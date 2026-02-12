@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        try {
+            // Attempting to read 32-bit signed integers
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            
+            // Attempting division
+            System.out.println(x / y);
+            
+        } catch (InputMismatchException e) {
+            // Sample output shows only the class name for input errors
+            System.out.println(e.getClass().getName());
+        } catch (ArithmeticException e) {
+            // Sample output shows the class name AND the message for math errors
+            System.out.println(e);
+        } finally {
+            sc.close();
+        }
+    }
+}
